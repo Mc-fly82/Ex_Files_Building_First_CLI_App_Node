@@ -1,0 +1,16 @@
+{
+  "name": "musette",
+  "version": "1.0.0",
+  "description": "A cool dev tool to help automate the initialize phase of your git workflow",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "git",
+    "node",
+    "cli"
+  ],
+  "author": "Flavius Marc",
+  "license": "ISC"
+}
