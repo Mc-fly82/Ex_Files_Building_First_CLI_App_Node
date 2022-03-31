@@ -5,3 +5,9 @@
 FIGlet: create large letters with text
 Chalk: applies ANSI colors and styles
 Clear: removes current  output in the console
+
+##CH3 - Notes
+Inquirer module prompts handles
+- Input type 
+- Password type
+
