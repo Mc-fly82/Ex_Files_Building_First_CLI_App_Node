@@ -7,7 +7,10 @@ Chalk: applies ANSI colors and styles
 Clear: removes current  output in the console
 
 ##CH3 - Notes
-Inquirer module prompts handles
+###Inquirer module prompts handles
 - Input type 
 - Password type
 
+###Config store explained
+- Store git config to a local file for later reuse
+- Handle read/write to the store
