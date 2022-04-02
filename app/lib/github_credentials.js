@@ -1,7 +1,7 @@
 const octokit = require('@octokit/rest')();
 const Configstore = require('configstore');
 const _ = require('lodash');
-
+const inquirer = require('./inquirer')
 const pkg = require('../package.json');
 const conf = new Configstore(pkg.name);
 
@@ -20,6 +20,9 @@ module.exports = {
         return conf.get('github_credentials.token')
     },
     setGitHubCredentials: async () => {
-       
+        const credentials = await inquirer.askGitHubCredentials();
+        octokit.authenticate(_.extend({
+            type: "basic",
+        },credentials))
     },
 }
