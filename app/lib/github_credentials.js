@@ -25,4 +25,24 @@ module.exports = {
             type: "basic",
         },credentials))
     },
+    registerNewToken: async () => {
+        try {
+            const response = await octokit.oauthAuthorizations.createAuthorization({
+                scopes: ['user',
+                         'public_repo',
+                         'repo',
+                         'repo:status'],
+                note: "musette: a cool tool for dev workflow automation",
+            });
+            const token = response.data.token;
+            if(token) {
+                conf.set('github_credentials.token', token);
+                return token
+            } else {
+                throw new Error("Missing Token", "Uh oh. A GitHub token was not retrieved")
+            }
+        } catch (e) {
+            throw e;
+        }
+    },
 }
